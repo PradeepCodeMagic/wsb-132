@@ -1,0 +1,14 @@
+.main{
+    width: 1000px;
+    height: 540px;
+    border: 2px solid black;
+}
+.row-1{
+    width: 984px;
+    height: 84px;
+    border: 8px solid red;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 84px;
+}
