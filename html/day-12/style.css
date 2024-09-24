@@ -1,0 +1,89 @@
+
+.body{
+    margin: 0;
+    padding: 0px;
+    background-color: black;
+}
+.row-1{
+    width: 1000px;
+    height: 186px;
+    background-image: url("images/headerbg.jpg");
+    margin: auto;
+
+}
+.row-1 .left{
+    width: 260px;
+    height: 160px;
+    /* border: 1px solid red; */
+    padding-top: 20px;
+    padding-left: 20px;
+    float: left;
+}
+.row-1 .middle{
+    width: 400px;
+    /* border: 1px solid red; */
+    float: left;
+    color: blue;
+    font-weight: bold;
+    text-align: center;
+    padding: 72px 0px;
+}
+.row-1 .right{
+    width: 296px;
+    height: 132px;
+    /* border: 1px solid red; */
+    float: left;
+    background-image: url("images/topcontactbg.png");
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+/* start row-2 */
+
+.row-2{
+    width: 1000px;
+    height: 46px;
+    margin: auto;
+    background-image: url("./images/menubg.jpg");
+}
+
+.row-2 .innerBox{
+    width: 127px;
+    height: 40px;
+    float: left;
+    margin-right: 21px;
+    background-image: url("./images/menubackground.png");
+    text-align: center;
+    line-height: 44px;
+    margin-top: 5px;
+}
+
+.innerBoxLeft{
+    margin-left: 67px;
+}
+
+/* row-5 */
+.row-5{
+    width: 1000px;
+    height: 50px;
+    background-image: url("images/footer_middle.png");
+    margin: 10px auto;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    color: red;
+}
+
+.span{
+    color: b;
+}
+
+/* ///////////////////////// */
+.about-row-2{
+    width: 1000px;
+    height: 50px;
+    background-color: red;
+    margin: auto;
+}

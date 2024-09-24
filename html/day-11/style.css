@@ -1,0 +1,39 @@
+
+.body{
+    margin: 0;
+    padding: 0px;
+}
+.row-1{
+    width: 1000px;
+    height: 186px;
+    background-image: url("images/headerbg.jpg");
+    margin: auto;
+
+}
+.row-1 .left{
+    width: 260px;
+    height: 160px;
+    /* border: 1px solid red; */
+    padding-top: 20px;
+    padding-left: 20px;
+    float: left;
+}
+.row-1 .middle{
+    width: 400px;
+    /* border: 1px solid red; */
+    float: left;
+    color: blue;
+    font-weight: bold;
+    text-align: center;
+    padding: 72px 0px;
+}
+.row-1 .right{
+    width: 296px;
+    height: 132px;
+    /* border: 1px solid red; */
+    float: left;
+    background-image: url("images/topcontactbg.png");
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 15px;
+}
