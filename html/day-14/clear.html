@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 600px;
+            padding: 10px;
+            background-color: #ccc;
+            margin: auto;
+        }
+        .row{
+            width: 100%;
+            /* padding: 5px; */
+            margin: 5px 0px;
+            
+        }
+        .left{
+            width: 20%;
+            float: left;
+            padding: 3px;
+            /* border: 1px solid red; */
+        }
+        .right{
+            width: 60%;
+            margin-left: 10px;
+            float: left;
+        }
+
+        .clear{
+            clear: both;
+        }
+
+        .textarea{
+            width: 200px;
+            height: 100px;
+            resize: none;
+        }
+        .btn{
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+            <h2>Enquiry </h2>
+
+            <form>
+                    <div class="row">
+                        <div class="left">
+                            Gender :
+                        </div>
+                        <div class="right">
+                            <input type="radio" name="ws" /> Male
+                            <input type="radio" name="ws" /> Female
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="left">
+                            Name :
+                        </div>
+                        <div class="right">
+                            <input type="text" placeholder="please enter your name"  /> 
+                            
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="left">
+                            Contact No :
+                        </div>
+                        <div class="right">
+                            <input type="number" placeholder="please enter your name"  /> 
+                            
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="left">
+                            Country  :
+                        </div>
+                        <div class="right">
+                            <select>
+                                <option>--Select--</option>
+                                <option>India</option>
+                                <option>USA</option>
+                                <option>Nepal</option>
+                                <option>Pakisthan</option>
+                                <option>India</option>
+                                <option>USA</option>
+                                <option>Nepal</option>
+                                <option>Pakisthan</option>
+                                <option>India</option>
+                                <option>USA</option>
+                                <option>Nepal</option>
+                                <option>Pakisthan</option>
+                            </select>
+                            
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="left">
+                            Address   :
+                        </div>
+                        <div class="right">
+                           <textarea class="textarea" placeholder="enter your address" ></textarea>
+                            
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="left">
+                            Email :
+                        </div>
+                        <div class="right">
+                            <input type="email" placeholder="please enter your name"  /> 
+                            
+                        </div>
+
+                        <div class="clear"></div>
+                    </div>
+
+                    <input type="file" />
+
+                    <button class="btn"> Submit </button>
+            </form>
+    </div>
+</body>
+</html>
