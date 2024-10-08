@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #ccc;
+            padding: 10px;
+        }
+
+        .inner {
+            width: 1000px;
+            margin: auto;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .inner .left {
+            width: 16%;
+        }
+
+        .inner .left img {
+            width: 100%;
+        }
+
+        .right {
+            width: 50%;
+
+        }
+
+        .right>ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-evenly;
+            position: relative;
+        }
+
+        .right>ul>li {
+            padding: 0px 20px;
+            cursor: pointer;
+        }
+        .dorpDown{
+            
+            background-color: skyblue;
+            position: absolute;
+            top: 301%;
+            left: -1%;
+            opacity: 0;
+            transition: 1s;
+         
+        }
+        .dorpDown ul li{
+            list-style: none;
+            padding: 10px 20px;
+        }
+
+        .right>ul>li:hover .dorpDown{
+                opacity: 1;
+             
+        }
+        .newActive{
+            left: 30%;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="inner">
+            <div class="left">
+                <img src="https://d3sz7hc46cgkuq.cloudfront.net/uploads/images/company-profile/logo/33665015-ede5-4084-9a1e-4a871973e211-1665488267.svg"
+                    alt="">
+            </div>
+            <div class="right">
+                <ul>
+                    <li>
+                        Home
+                        <div class="dorpDown">
+                            <ul>
+                                <li>Home - About</li>
+                                <li> Home - Contact</li>
+                                <li> Home - Gallery</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>About
+                        <div class="dorpDown newActive">
+                            <ul>
+                                <li>Home - About1111</li>
+                                <li> Home - Contact2222</li>
+                                <li> Home - Gallery3333</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>Contact</li>
+                    <li>Gallery</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
