@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=Q, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 1000px;
+            height: 600px;
+            border: 1px solid;
+            margin: auto;
+            position: relative;
+        }
+        @keyframes solar{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+        .sun {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            border-radius: 50%;
+            position: absolute;
+            top: 40%;
+            left: 40%;
+
+        }
+
+        .orbit-1 {
+            width: 130px;
+            height: 130px;
+            border: 2px solid red;
+            border-radius: 50%;
+            position: absolute;
+            top: 37%;
+            left: 38%;
+            animation: solar 2s 0s infinite linear;
+        }
+        .moon{
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 50%;
+            position: absolute;
+            top: 92%;
+            left: 38%;
+           
+        }
+        .orbit-2 {
+            width: 150px;
+            height: 150px;
+            border: 2px solid red;
+            border-radius: 50%;
+            position: absolute;
+            top: 37%;
+            left: 38%;
+            animation: solar 2s 1s infinite linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="sun"></div>
+
+        <div class="orbit-1">
+            <div class="moon"></div>
+        </div>
+
+        <div class="orbit-2">
+            <div class="moon"></div>
+        </div>
+    </div>
+</body>
+
+</html>

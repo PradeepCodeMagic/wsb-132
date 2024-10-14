@@ -1,0 +1,18 @@
+/* mobile */
+@media only screen and (min-width:0px) and (max-width:575px){
+    .box{
+        width: 98%;
+        background-color: rgb(208, 122, 158);
+    }
+}
+
+
+
+
+/* tab */
+@media only screen and (min-width:576px) and (max-width:991px){
+    .box{
+        width: 48%;
+        background-color: rgb(100, 200, 211);
+    }
+}
