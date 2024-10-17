@@ -1,0 +1,66 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.header{
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    box-shadow: 0px 0px 10px 5px #ccc;
+    background-color: white;
+}
+.headerInner{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.headerInner .number{
+    background-color: blue;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px 20px 0px 20px;
+}
+
+.banner{
+    width: 100%;
+    background-image: url('https://packshifts.in/images/banner.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.bannerInner{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+.bannerInner .left{
+    width: 60%;
+    color: white;
+    padding: 30px 0px;
+    
+}
+.bannerInner .left h2{
+    padding: 10px 0px;
+    font-size: 30px;
+}
+.bannerInner .left h3{
+    padding: 15px 0px;
+    font-size: 26px;
+}
+.bannerInner .left p{
+    padding: 12px 0px;
+    font-size: 20px;
+}
+.bannerInner .right{
+    width: 35%;
+    background-color: skyblue;
+    padding: 50px 0px;
+}

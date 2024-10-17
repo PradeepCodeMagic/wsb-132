@@ -1,0 +1,18 @@
+@media only screen and (min-width:0px) and (max-width:575px){
+    .headerInner .number{
+       display: none;
+    }
+    .headerInner .logo{
+        
+        margin: auto;
+    }
+    .bannerInner .left{
+        width: 100%;
+        text-align: center;
+        
+    }
+    .bannerInner .right{
+        width: 100%;
+    
+    }
+}
