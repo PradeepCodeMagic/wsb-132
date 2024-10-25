@@ -55,29 +55,37 @@
 
     let per = Number(prompt("enter persentage %  here "))
 
-    
-    if (per > 100 ) {
+
+    if (per > 100) {
         console.log("please enter valid number %")
     }
     else {
-        if (per >= 60 && per <= 100) {
-            console.log("first")
+        if (per <= -1) {
+            console.log("please enter valid number %")
         }
+
         else {
-            if (per >= 45) {
-                console.log("second")
+            if (per >= 60 && per <= 100) {
+                console.log("first")
             }
             else {
-                if (per >= 33) {
-                    console.log("third")
+                if (per >= 45) {
+                    console.log("second")
                 }
                 else {
-                    console.log("fail")
+                    if (per >= 33) {
+                        console.log("third")
+                    }
+                    else {
+                        console.log("fail")
 
+                    }
                 }
             }
         }
     }
+
+
 
 
 
