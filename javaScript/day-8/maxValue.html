@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let myArr=[-12,12,0,55,-44,65,656,-76,99]
+
+    let maxValue=-Infinity
+    let secMaxValue=-Infinity
+
+    let minValue=Infinity
+    let secMinValue=Infinity
+    
+    for(let x of myArr ){
+      if(maxValue < x ){
+        maxValue=x
+      } 
+    }
+
+    for(let y of myArr){
+        if(secMaxValue < y  &&   y < maxValue){
+            secMaxValue=y
+        }
+    }
+
+    for(let x of myArr ){
+            if( minValue > x) {
+                minValue=x
+            }
+    }
+
+    for(let x of myArr ){
+            if( secMinValue > x && x > minValue ) {
+                secMinValue=x
+            }
+    }
+
+    console.log(maxValue)
+    console.log(secMaxValue)
+
+    console.log(minValue)
+
+    console.log(secMinValue)
+    
+
+</script>
+</html>
