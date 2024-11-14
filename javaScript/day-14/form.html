@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #ccc;
+        }
+
+        .main {
+            width: 600px;
+            margin: 30px auto;
+            background-color: skyblue;
+            padding: 10px;
+
+        }
+
+        .main .row {
+            width: 100%;
+            margin: 5px 0px;
+        }
+
+        .main .row input {
+            width: 80%;
+            padding: 10px;
+            border-radius: 5px;
+
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ccc;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h3> User Form </h3>
+        <form onsubmit="UserInfo(event)" >
+            <div class="row">
+                <input type="text" name="Uname" placeholder="please enter your name here">
+            </div>
+            <div class="row">
+                <input type="text" name="Unumber" placeholder="please enter your mobile number here">
+            </div>
+            <div class="row">
+                <input type="text" name="Uemail" placeholder="please enter your email here">
+            </div>
+            <div class="row">
+                <input type="text" name="Upassword" placeholder="please enter your password here">
+            </div>
+
+            <div class="row">
+                <button> Submit </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+
+let UserInfo=(e)=>{
+    e.preventDefault()
+   
+   
+    let userObject={
+        name:e.target.Uname.value,
+        email:e.target.Uemail.value,
+        number:e.target.Unumber.value,
+        password:e.target.Upassword.value,
+    }
+    
+    e.target.reset()
+
+    
+}
+
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 500px;
+            height: auto;
+            padding: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <input type="date" class="dob" />
+
+        <button onclick="ageCal()" > click </button>
+    </div>
+</body>
+<script>
+
+//     let current= new Date()
+//     // let year=current.getFullYear()
+//     // let month=current.getMonth()
+//     // let date=current.getDate()
+//     // let day=current.getDay()
+//     // let time=current.getTime()
+
+//    let oneDayMiliSec=24*60*60*1000
+//     let miliSec=current.getTime() 
+//    console.log(miliSec/oneDayMiliSec)
+
+let dob=document.querySelector(".dob")
+
+let ageCal=()=>{
+   
+    let userDob=dob.value
+
+    let currentMiliSec= new Date().getTime()
+    let userMiliSec=new Date(userDob).getTime()
+
+
+    let reminderMiliSec=currentMiliSec-userMiliSec
+    let oneDayMiliSec=24*60*60*1000
+
+    let FinalDay=Math.round(reminderMiliSec/oneDayMiliSec)
+   let finalMIliSec=reminderMiliSec%oneDayMiliSec
+
+   console.log(FinalDay)
+   console.log(finalMIliSec)
+   
+}
+
+
+   
+
+
+
+
+</script>
+</html>

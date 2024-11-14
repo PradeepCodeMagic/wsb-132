@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #4158D0;
+            background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+            height: 100vh;
+        }
+
+        .main {
+            width: 800px;
+            padding: 10px;
+           
+            margin: auto;
+        }
+        .row{
+            width: 100%;
+            margin: 5px 0px;
+        }
+        .row h3{
+            background-color: white;
+            padding: 10px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        .row p{
+            color: white;
+            display: none;
+        }
+        .activeP{
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="row">
+            <h3>1. What is Netflix?</h3>
+            <p>
+                1. Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime,
+                documentaries and more – on thousands of internet-connected devices.
+            </p>
+        </div>
+        <div class="row">
+            <h3>2. What is Netflix?</h3>
+            <p>
+                2. Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime,
+                documentaries and more – on thousands of internet-connected devices.
+            </p>
+        </div>
+        <div class="row">
+            <h3>3. What is Netflix?</h3>
+            <p>
+                3. Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime,
+                documentaries and more – on thousands of internet-connected devices.
+            </p>
+        </div>
+        <div class="row">
+            <h3>4. What is Netflix?</h3>
+            <p>
+                4. Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime,
+                documentaries and more – on thousands of internet-connected devices.
+            </p>
+        </div>
+        
+    </div>
+</body>
+<script>
+    let allH3=document.querySelectorAll(".row h3")
+
+    allH3.forEach((v,i)=>{
+        v.addEventListener( "click" , ()=>{
+            allH3.forEach((value,index)=>{
+                if(index!=i){
+                    allH3[index].nextElementSibling.classList.remove("activeP")
+                    
+                }
+            })
+           v.nextElementSibling.classList.toggle("activeP")
+        } )
+    } )
+
+
+</script>
+
+</html>

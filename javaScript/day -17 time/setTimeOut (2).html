@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .madal{
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            position: absolute;
+            top: -120%;
+            left: 30%;
+            transition: 1s;
+        }
+        .activeClass{
+            top: 20% !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="madal">
+        hello modal
+    </div>
+</body>
+
+<script>
+    let madal=document.querySelector(".madal")
+
+    let showModal=setTimeout(()=>{
+        madal.classList.add("activeClass")
+    }, 3000 )
+
+    
+
+</script>
+</html>
