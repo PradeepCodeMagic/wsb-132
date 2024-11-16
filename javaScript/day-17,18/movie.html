@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        .row_1 {
+            max-width: 1200px;
+            margin: auto;
+
+        }
+
+        .row_1 input {
+            width: 80%;
+            padding: 10px;
+        }
+
+        .row_2 {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        .innerBox {
+            width: 23%;
+            margin: 1%;
+
+            background-color: aqua;
+
+        }
+
+        .innerBox img {
+            width: 100%;
+
+        }
+
+        .paginationDiv{
+            width: 1000px;
+            margin: 30px auto;
+           
+        }
+        .paginationDiv ul{
+            display: flex;
+            list-style: none;
+           
+        }
+        .paginationDiv ul li{
+            background-color: skyblue;
+            padding: 10px;
+            margin: 0px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row_1">
+        <h2> Movie App </h2>
+
+        <input type="text" placeholder="enter your movie name" id="myInput"  />
+    </div>
+
+    <div class="row_2">
+
+    </div>
+
+    <div class="paginationDiv">
+            <ul>
+                
+            </ul>
+    </div>
+</body>
+
+<script>
+
+    let row_2 = document.querySelector(".row_2")
+    let myInput=document.querySelector("#myInput")
+    let paginationDiv=document.querySelector(".paginationDiv ul")
+
+    myInput.addEventListener("keyup" , (e)=>{
+            let inputValue=e.target.value;
+
+            fetchApi(inputValue)
+    })
+
+   
+    let fetchApi = async ( searchMovie , pageNO ) => {
+
+        console.log( searchMovie , pageNO)
+
+        let myApi;
+
+        if(searchMovie==undefined){
+            myApi="https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1"
+        }
+        else if(pageNO!=undefined){
+                 myApi=`
+                 https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=${pageNO}
+                 `
+        }
+        else{
+            myApi=` https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=${searchMovie}`
+        }
+
+        let Api = await fetch(myApi)
+
+        let jsonData = await Api.json()
+
+        let finalData = jsonData.results;
+
+        row_2.innerHTML="";
+
+        finalData.forEach((v, i) => {
+            row_2.innerHTML += `
+                     <div class="innerBox">
+                        <img src=https://image.tmdb.org/t/p/w1280/${v.poster_path}/>
+
+                         <h3> Date : ${v.release_date} </h3>
+                        <h4> title: ${v.original_title} </h4>
+                    </div>
+            `
+        })
+
+
+    }
+
+    fetchApi()
+
+
+    for(let i=1 ; i<=20 ; i++){
+        paginationDiv.innerHTML +=`
+                        <li onclick="getPage(${i})" > ${i} </li>
+        `
+    }
+
+    let getPage=(page)=>{
+        fetchApi("",page)
+    }
+
+
+    // let Ws=(a ,b)=>{
+    //         console.log(a ,b)
+    // }
+
+    // // Ws(10)
+
+
+    // Ws("pradeep",22)
+</script>
+
+</html>
