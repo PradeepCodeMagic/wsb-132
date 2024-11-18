@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="newBox">
+       
+    </div>
+</body>
+
+<script>
+
+
+    let newBox = document.querySelector(".newBox")
+
+    let getId = () => {
+        getId = JSON.parse(localStorage.getItem("ecommId"))
+
+        fetch(`https://dummyjson.com/products/${getId}`)
+            .then((ress) => {
+                return ress.json()
+            })
+            .then((finalRess) => {
+
+                console.log(finalRess)
+                newBox.innerHTML=`
+                 <div class="innerbox">
+                        <img src=${finalRess.thumbnail} alt="">
+                  </div>
+                `
+
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
+    getId()
+
+</script>
+
+</html>
