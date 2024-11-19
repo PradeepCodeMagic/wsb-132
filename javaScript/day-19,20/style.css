@@ -65,6 +65,51 @@ body{
 }
 
 .newBox{
-    width: 600px;
-    border: 1px solid red;
+    width: 100%;
+   
+}
+.newBox img{
+    width: 100%;
+    
+}
+
+.mainSec{
+    width: 1000px;
+    margin:20px auto;
+    display: flex;
+}
+
+.mainSec .first{
+    width: 10%;
+    
+}
+
+.mid{
+    width: 40%;
+}
+.mainSec .right{
+    width: 50%;
+}
+
+.smallImgDiv{
+    width: 100%;
+}
+
+.smallImgDiv img{
+    width: 100%;
+    background-color: white;
+    margin: 5px 0px;
+
+}
+.mainSec .right button{
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    background-color: rgb(78, 59, 96);
+    margin-top: 40px;
+    color: white;
+    font-size: 22px;
+}
+.big{
+    margin: 20px 0px;
 }

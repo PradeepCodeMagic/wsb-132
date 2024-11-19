@@ -9,15 +9,33 @@
 </head>
 
 <body>
-    <div class="newBox">
-       
+
+    <div class="mainSec">
+            <div class="first">
+                
+               
+               
+            </div>
+
+
+            <div class="mid">
+                <div class="newBox"></div>
+            </div>
+            <div class="right">
+                
+            </div>
     </div>
+    
 </body>
 
 <script>
 
+    let mainSecRight=document.querySelector(".mainSec .right")
+    let first=document.querySelector(".first")
 
     let newBox = document.querySelector(".newBox")
+
+    let globalSrc;
 
     let getId = () => {
         getId = JSON.parse(localStorage.getItem("ecommId"))
@@ -28,12 +46,34 @@
             })
             .then((finalRess) => {
 
-                console.log(finalRess)
+
                 newBox.innerHTML=`
                  <div class="innerbox">
                         <img src=${finalRess.thumbnail} alt="">
                   </div>
                 `
+                console.log(globalSrc)
+                // /////////////////////////////////////////////////
+                mainSecRight.innerHTML=`
+                    <h2> ${finalRess.title} </h2> 
+                <h4 class="big">₹ ${finalRess.price} </h4>
+                <p>
+                    ${finalRess.description}
+                </p>
+
+                <button> Add Cart </button>
+
+                `
+                //////////////////////////////////////////////////////////
+                first.innerHTML=""
+                let allImages=finalRess.images
+                allImages.forEach((v)=>{
+                    first.innerHTML+=`
+                             <div class="smallImgDiv"  >
+                                <img src=${v} alt="" onmouseover="getSmallSrc(this)" >
+                            </div>
+                    `
+                })
 
             })
             .catch((error) => {
@@ -42,6 +82,17 @@
     }
 
     getId()
+
+
+    let getSmallSrc=(oneUrl)=>{
+           
+        console.log(oneUrl)
+            newBox.innerHTML=`
+                 <div class="innerbox">
+                        <img src=${oneUrl.src} alt="">
+                  </div>
+                `
+    }
 
 </script>
 
