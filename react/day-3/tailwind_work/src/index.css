@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.ws{
+  width: 300px;
+  height: 100px;
+  background-color: red;
+}
+
+.bigDiv{
+  @apply  text-[18px] bg-red-700 text-white 
+}
