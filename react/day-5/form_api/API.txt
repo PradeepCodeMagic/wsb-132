@@ -1,0 +1,12 @@
+https://wscubetech.co/form-api/save_user.php
+https://wscubetech.co/form-api/view_user.php
+https://wscubetech.co/form-api/delete_user.php?id=${id}
+
+
+{
+      "en_id": "11",
+      "en_name": "Pardeep",
+      "en_email": "mailto:pardeep@gmail.com",
+      "en_contact": "78965412302",
+      "en_password": "abc@123"
+}
