@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./SingleProduct.css"
 import { useLocation, useParams } from 'react-router-dom'
 import Magnifier from "react-magnifier";
-// import yourImage from "./path/to/image";
 import axios from 'axios'
+import { EcommContext } from './MainContext';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 export default function SingleProduct() {
 
@@ -12,27 +14,56 @@ export default function SingleProduct() {
     const [smallImg, setSmallImg] = useState([])
     const [bigImg, setBigImg] = useState([])
 
-    console.log(smallImg)
+    // context
+    let {cart,setCart}=useContext(EcommContext)
 
+   
     let singleData = () => {
         axios.get(`https://dummyjson.com/products/${Pid}`)
             .then((res) => {
                 setSingleDataP(res.data)
+                // console.log(res.data)
                 setSmallImg(res.data.images)
                 setBigImg(res.data.thumbnail)
             })
             .catch()
     }
-
-
     useEffect(() => {
         singleData()
     }, [])
 
 
 
+    let CartWork=(Uid)=>{
+
+        let isChecked=cart.filter((v)=>v.id==Uid)
+        console.log(isChecked)
+        
+        let CartObj={
+            id:singleDataP.id,
+            img:singleDataP.thumbnail,
+            price:singleDataP.price,
+            title:singleDataP.title,
+            brand:singleDataP.brand,
+            quantity:1
+        }
+
+        setCart([...cart,CartObj])
+        toast.success("Item Added in Cart !!", {style:{
+            
+            right:"60%",
+            width:"300px"
+        }} )
+        
+        
+    }
+    
+
+
+
     return (
         <div>
+        <ToastContainer />
             <div className="detail-container">
 
                 <nav className="breadcrumb">
@@ -74,33 +105,16 @@ export default function SingleProduct() {
                         <p className="payment-info">4 interest-free payments with <a href="#">Klarna</a>.</p>
 
 
-                        <div className="options">
-                            <p className="option-label">Color Options:</p>
-                            <div className="option-buttons">
-                                <button className="active">Black</button>
-                                <button>White</button>
-                                <button>Blue</button>
-                            </div>
-                        </div>
-                        <div className="options">
-                            <p className="option-label">Connectivity:</p>
-                            <div className="option-buttons">
-                                <button className="active">Bluetooth</button>
-                                <button>Wired</button>
-                            </div>
-                        </div>
+                       
+                        
                         <div className="actions_wrraper">
 
-                            <div className="quantity-section">
-                                <button>-</button>
-                                <input type="text" className="quantity-input" value="1" />
-                                <button>+</button>
-                            </div>
+                           
 
 
                             <div className="actions">
-                                <button className="add-to-cart">Add to Cart</button>
-                                <button className="buy-now">Buy Now</button>
+                                <button className="add-to-cart" onClick={()=>CartWork(singleDataP.id)} >Add to Cart</button>
+                                
                             </div>
                         </div>
 

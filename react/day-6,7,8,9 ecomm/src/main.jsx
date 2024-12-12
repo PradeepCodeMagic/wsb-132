@@ -6,32 +6,43 @@ import SingleProduct from './SingleProduct.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import NotFound from './NotFound.jsx'
 import Layout from './Layout.jsx'
+import Cart from './Cart.jsx'
+import MainContext from './MainContext.jsx'
 
-const ws=createBrowserRouter([
+const ws = createBrowserRouter([
   {
-    path:"/",
-    element:<Layout/>,
-    children:[
+    path: "/",
+    element: <Layout />,
+    children: [
       {
-        path:"/",
-        element:<App/>
+        path: "/",
+        element: <App />
       },
       {
-        path:"/detail-page/:id?",
-        element:<SingleProduct/>
+        path: "/detail-page/:id?",
+        element: <SingleProduct />
       },
-      
+
+      {
+        path: "/cart",
+        element: <Cart />
+      },
+
     ]
 
   },
   {
-    path:"*",
-    element:<NotFound/>
+    path: "*",
+    element: <NotFound />
   }
-  
+
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <RouterProvider router={ws} />
+
+    <MainContext>
+      <RouterProvider router={ws} />
+    </MainContext>
+    
   </StrictMode>,
 )
