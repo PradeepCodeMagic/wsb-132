@@ -33,12 +33,9 @@ export default function SingleProduct() {
     }, [])
 
 
-
+    // const [Checked,setIschecked]=useState(false)
     let CartWork=(Uid)=>{
 
-        let isChecked=cart.filter((v)=>v.id==Uid)
-        console.log(isChecked)
-        
         let CartObj={
             id:singleDataP.id,
             img:singleDataP.thumbnail,
@@ -48,12 +45,27 @@ export default function SingleProduct() {
             quantity:1
         }
 
+       let isChecked=cart.some((v)=>v.id==Uid)
+
+      if(isChecked==false){
         setCart([...cart,CartObj])
-        toast.success("Item Added in Cart !!", {style:{
-            
+        toast.success("Item Added in Cart !!", {style:{ 
             right:"60%",
             width:"300px"
         }} )
+      }
+      else{
+        toast.success("This Item Already in Cart !!", {style:{
+            right:"60%",
+            width:"300px"
+        }} )
+      }
+        
+
+    //   setIschecked(false)
+        
+
+        
         
         
     }
