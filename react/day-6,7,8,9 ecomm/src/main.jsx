@@ -46,3 +46,14 @@ createRoot(document.getElementById('root')).render(
     
   </StrictMode>,
 )
+
+
+import './globals.css'; // Import global styles if needed
+import Link from 'next/link';
+
+export const metadata = {
+  title: 'My App',
+  description: 'A demo app with app routing in Next.js',
+};
+
+
